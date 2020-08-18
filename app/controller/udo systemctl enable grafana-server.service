@@ -1,0 +1,19 @@
+[0;1;32m●[0m grafana-server.service - Grafana instance
+   Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; disabled; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Mon 2020-08-17 04:04:14 CST; 3s ago
+     Docs: http://docs.grafana.org
+ Main PID: 5185 (grafana-server)
+    Tasks: 16 (limit: 4915)
+   CGroup: /system.slice/grafana-server.service
+           └─5185 /usr/sbin/grafana-server --config=/etc/grafana/grafana.ini --pidfile=/var/run/grafana/grafana-server.pid --packaging=deb cfg:default.paths.logs=/var/log/grafana cfg:default.paths.data=/var/lib/grafana cfg:default.paths.plugins=/var/lib/grafana/plugins cfg:default.paths.provisioning=/etc/grafana/provisioning
+
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="add index notification_journal org_id & alert_id & notifier_id"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="drop alert_notification_journal"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="create alert_notification_state table v1"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="add index alert_notification_state org_id & alert_id & notifier_id"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="Add for to alert table"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="Add column uid in alert_notification"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="Update uid column values in alert_notification"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="Add unique index alert_notification_org_id_uid"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="Remove unique index org_id_name"
+Aug 17 04:04:17 172 grafana-server[5185]: t=2020-08-17T04:04:17+0800 lvl=info msg="Executing migration" logger=migrator id="alter alert.settings to mediumtext"
